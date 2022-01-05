@@ -30,8 +30,9 @@ export default function DogDetail() {
           <Dogs dog={dogs} />
           {dogs.map((dog) => (
             <div key={dog.id}>
+              <h1> Say Hi to {dog.name}. </h1>
               <img src={dog.image}></img>
-              <h2> {dog.bio} </h2>
+              <h2> {dog.bio}. </h2>
             </div>
           ))}
         </li>

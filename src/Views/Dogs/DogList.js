@@ -19,6 +19,7 @@ export default function DogList() {
   return (
     <>
       <h1>Doggos</h1>
+      <h2>Click the pictures to learn more.</h2>
       <ul>
         {dogs.map((dog) => (
           <div key={dog.id}>
@@ -26,7 +27,7 @@ export default function DogList() {
               <img src={dog.image}></img>
             </Link>
             <h2>
-              {dog.name} is {dog.age} years old, and is a {dog.breed}
+              🐾 This is {dog.name} 🐾 <br></br> {dog.name} is a {dog.age} year old {dog.breed}.
             </h2>
           </div>
         ))}

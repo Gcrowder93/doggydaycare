@@ -1,4 +1,30 @@
 body {
   text-align: center;
-  background-color: tomato;
+  background-color: #a0aecd;
+}
+
+img {
+  border-radius: 33%;
+}
+
+img:hover {
+  opacity: 0.7;
+}
+
+header {
+  background-color: royalblue;
+  opacity: 0.5;
+}
+
+a {
+  color: #a0aecd;
+  font-size: x-large;
+}
+
+a:hover {
+  color: lightpink;
+}
+
+a:active {
+  color: lightblue;
 }
