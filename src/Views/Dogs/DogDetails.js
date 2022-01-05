@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Dogs from '../../Components/DogCard/Dogs';
 import { fetchDogs, getDogsById } from '../../services/DogRoute';
