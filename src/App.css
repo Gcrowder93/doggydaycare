@@ -5,6 +5,8 @@ body {
 
 img {
   border-radius: 33%;
+  height: 340px;
+  width: 525px;
 }
 
 img:hover {
