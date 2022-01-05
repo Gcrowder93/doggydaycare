@@ -6,7 +6,7 @@ export default function Header() {
     <div>
       <Link to="/">Home</Link>
       <br></br>
-      {/* <Link to="/dogs/admin">Admin</Link> */}
+      <Link to="/dogs/DogForm">Admin</Link>
     </div>
   );
 }
