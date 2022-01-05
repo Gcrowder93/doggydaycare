@@ -1,8 +1,9 @@
 import './App.css';
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import DogList from './Views/Dogs/DogList';
 import DogDetail from './Views/Dogs/DogDetails';
-import DogEdit from './Views/Dogs/DogEdit';
+// import DogEdit from './Views/Dogs/DogEdit';
 import Header from './Components/Header/Header';
 import Admin from './Components/Admin/Admin';
 
