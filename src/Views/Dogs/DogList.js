@@ -8,7 +8,7 @@ export default function DogList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetchDogs();
+      const dogData = await fetchDogs();
       setDogs(dogData);
       setLoading(false);
     };
