@@ -8,13 +8,13 @@ export default function DogDetail() {
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const dogData = await fetchDogs();
-      setDogs(dogData);
-    };
-    fetchData();
-  }, [id]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const dogData = await fetchDogs();
+  //     setDogs(dogData);
+  //   };
+  //   fetchData();
+  // }, [id]);
 
   useEffect(() => {
     getDogsById(id)
