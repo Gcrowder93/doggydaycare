@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import DogForm from '../../Components/DogCard/DogForm';
-import { updateDog } from '../../services/DogRoute';
+// import { updateDog } from '../../services/DogRoute';
 import { getDogsById } from '../../services/DogRoute';
 
 export default function DogEdit() {
@@ -25,10 +25,10 @@ export default function DogEdit() {
     fetchData();
   }, [params.id]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await updateDog(params.id, name, bio, image, age, breed);
-  };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   await updateDog(params.id, name, bio, image, age, breed);
+  // };
 
   return (
     <div>
@@ -44,7 +44,7 @@ export default function DogEdit() {
         setAge={setAge}
         breed={breed}
         setBreed={setBreed}
-        handleSubmit={handleSubmit}
+        // handleSubmit={handleSubmit}
       />
     </div>
   );

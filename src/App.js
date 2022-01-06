@@ -18,13 +18,13 @@ function App() {
           <Route exact path="/">
             <DogList />
           </Route>
-          <Route path="/dogs/DogForm">
+          <Route exact path="/dogs/DogForm">
             <DogForm />
           </Route>
-          <Route path="/dogs/:id/DogEdit">
+          <Route exact path="/dogs/:id/DogEdit">
             <DogEdit />
           </Route>
-          <Route path="/dogs/:id">
+          <Route exact path="/dogs/:id">
             <DogDetail />
           </Route>
         </Switch>
