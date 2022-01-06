@@ -34,7 +34,7 @@ export default function DogDetail() {
               <h1> Say Hi to {dog.name}. </h1>
               <img src={dog.image}></img>
               <h2> {dog.bio}. </h2>
-              <Link to="/dogs/id:/DogEdit">Edit</Link>
+              <Link to="/dogs/:id/DogEdit">Edit</Link>
             </div>
           ))}
         </li>
