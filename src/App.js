@@ -15,16 +15,16 @@ function App() {
         <Header />
         <Admin />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/" component={DogList}>
             <DogList />
           </Route>
-          <Route exact path="/dogs/DogForm">
+          <Route exact path="/dogs/DogForm" component={DogForm}>
             <DogForm />
           </Route>
-          <Route exact path="/dogs/:id/DogEdit">
+          <Route exact path="/dogs/:id/DogEdit" component={DogEdit}>
             <DogEdit />
           </Route>
-          <Route exact path="/dogs/:id">
+          <Route exact path="/dogs/:id" component={DogDetail}>
             <DogDetail />
           </Route>
         </Switch>

@@ -20,3 +20,8 @@ export async function updateDog(id, name, bio, image, age, breed) {
   const response = await client.from('dogs').update({ name, bio, image, age, breed }).eq('id', id);
   return checkError(response);
 }
+
+export async function addDog(id, name, bio, image, age, breed) {
+  const response = await client.from('dogs').add({ name, bio, image, age, breed }).eq('id', id);
+  return checkError(response);
+} //addDog and DogAdmin created

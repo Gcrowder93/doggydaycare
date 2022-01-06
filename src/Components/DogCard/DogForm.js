@@ -14,7 +14,6 @@ export default function DogForm(
   breed,
   setBreed,
   handleSubmit
-  //   updateDog
 ) {
   //this dog-form is being grabbed and no info is being put in
   return (
