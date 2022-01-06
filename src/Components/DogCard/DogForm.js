@@ -1,4 +1,5 @@
 import React from 'react';
+// import { getDogsById } from '../../services/DogRoute';
 // import { updateDog } from '../../services/DogRoute';
 
 export default function DogForm(
@@ -25,7 +26,7 @@ export default function DogForm(
           <input
             placeholder="Name"
             type="text"
-            // value={name}
+            value={[]}
             onChange={(e) => {
               setName(e.target.value);
             }}

@@ -12,11 +12,11 @@ export async function fetchDogs() {
 }
 
 export async function getDogsById(id) {
-  let request = await client.from('dogs').select().match({ id });
+  let request = await client.from('dogs').select().match({ id }).single();
   return request;
 }
 
 export async function updateDog(id, name, bio, image, age, breed) {
-  const resp = await client.from('dogs').update(name, bio, image, age, breed).eq('id', id);
-  return checkError(resp);
+  const response = await client.from('dogs').update({ name, bio, image, age, breed }).eq('id', id);
+  return checkError(response);
 }
