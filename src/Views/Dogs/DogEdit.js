@@ -46,6 +46,8 @@ export default function DogEdit() {
         setBreed={setBreed}
         handleSubmit={handleSubmit}
       />
+      <br></br>
+      {/* <button onClick={handleSubmit}>Delete</button> */}
     </div>
   );
 }

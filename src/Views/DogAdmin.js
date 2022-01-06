@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
-// import { useParams } from 'react-router-dom';
 import DogForm from '../../Components/DogCard/DogForm';
 import { addDog } from '../services/DogRoute';
-// import { getDogsById } from '../../services/DogRoute';
 
-export default function DogEdit() {
+export default function CreateDog() {
   const [name, setName] = useState('');
   const [bio, setBio] = useState('');
   const [image, setImage] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
-
-  //   const params = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +16,7 @@ export default function DogEdit() {
 
   return (
     <div>
-      <h1>Edit Dog</h1>
+      <h1>Add a new Dog</h1>
       <DogForm
         name={name}
         setName={setName}

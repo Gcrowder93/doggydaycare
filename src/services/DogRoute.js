@@ -12,7 +12,7 @@ export async function fetchDogs() {
 }
 
 export async function getDogsById(id) {
-  let request = await client.from('dogs').select().match({ id }).single();
+  let request = await client.from('dogs').select('*').match({ id }).single();
   return request;
 }
 
@@ -21,7 +21,7 @@ export async function updateDog(id, name, bio, image, age, breed) {
   return checkError(response);
 }
 
-export async function addDog(id, name, bio, image, age, breed) {
-  const response = await client.from('dogs').add({ name, bio, image, age, breed }).eq('id', id);
+export async function addDog(name, bio, image, age, breed) {
+  const response = await client.from('dogs').insert({ name, bio, image, age, breed });
   return checkError(response);
 } //addDog and DogAdmin created

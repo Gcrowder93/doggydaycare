@@ -25,7 +25,7 @@ export default function DogForm(
           <input
             placeholder="Name"
             type="text"
-            value={[]}
+            value={name}
             onChange={(e) => {
               setName(e.target.value);
             }}
@@ -76,6 +76,7 @@ export default function DogForm(
           />
           <br></br>
           <button onClick={handleSubmit}>Update</button>
+          {/* <button onClick={handleSubmit}>Delete</button> */}
         </div>
       </form>
     </div>
