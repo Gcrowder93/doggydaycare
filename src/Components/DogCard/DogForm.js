@@ -1,7 +1,21 @@
 import React from 'react';
-import { updateDog } from '../../services/DogRoute';
+// import { updateDog } from '../../services/DogRoute';
 
-export default function DogForm(name, bio, image, age, breed, updateDog) {
+export default function DogForm(
+  name,
+  setName,
+  bio,
+  setBio,
+  image,
+  setImage,
+  age,
+  setAge,
+  breed,
+  setBreed,
+  handleSubmit
+  //   updateDog
+) {
+  //this dog-form is being grabbed and no info is being put in
   return (
     <div className="dog-form">
       <form>
@@ -9,11 +23,11 @@ export default function DogForm(name, bio, image, age, breed, updateDog) {
         <div className="form-control">
           <label>Name: </label>
           <input
-            placeholder="name"
+            placeholder="Name"
             type="text"
             value={name}
             onChange={(e) => {
-              updateDog('name', e.target.value);
+              setName(e.target.value);
             }}
           />
         </div>
@@ -24,7 +38,7 @@ export default function DogForm(name, bio, image, age, breed, updateDog) {
             type="text"
             value={bio}
             onChange={(e) => {
-              updateDog('bio', e.target.value);
+              setBio(e.target.value);
             }}
           />
         </div>
@@ -35,7 +49,7 @@ export default function DogForm(name, bio, image, age, breed, updateDog) {
             type="number"
             value={age}
             onChange={(e) => {
-              updateDog('age', e.target.value);
+              setAge(e.target.value);
             }}
           />
         </div>
@@ -46,7 +60,7 @@ export default function DogForm(name, bio, image, age, breed, updateDog) {
             type="text"
             value={breed}
             onChange={(e) => {
-              updateDog('breed', e.target.value);
+              setBreed(e.target.value);
             }}
           />
         </div>
@@ -57,9 +71,11 @@ export default function DogForm(name, bio, image, age, breed, updateDog) {
             type="text"
             value={image}
             onChange={(e) => {
-              updateDog('image', e.target.value);
+              setImage(e.target.value);
             }}
           />
+          <br></br>
+          <button onClick={handleSubmit}>Update</button>
         </div>
       </form>
     </div>

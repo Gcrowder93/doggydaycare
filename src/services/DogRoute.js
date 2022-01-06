@@ -1,4 +1,4 @@
-import { client } from './client';
+import { client, checkError } from './client';
 
 export async function fetchDogs() {
   const resp = await fetch(`${process.env.REACT_APP_SUPABASE_URL}/rest/v1/dogs?`, {
@@ -16,7 +16,7 @@ export async function getDogsById(id) {
   return request;
 }
 
-export async function updateDog(dog) {
-  const resp = await client.from('dogs').update(dog).eq('id', dog.id);
-  return resp;
+export async function updateDog(id, name, bio, image, age, breed) {
+  const resp = await client.from('dogs').update(name, bio, image, age, breed).eq('id', id);
+  return checkError(resp);
 }

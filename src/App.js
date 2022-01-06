@@ -21,7 +21,7 @@ function App() {
           <Route path="/dogs/DogForm">
             <DogForm />
           </Route>
-          <Route path="/dogs/:id/edit">
+          <Route path="/dogs/:id/DogEdit">
             <DogEdit />
           </Route>
           <Route path="/dogs/:id">
