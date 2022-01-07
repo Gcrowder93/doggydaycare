@@ -43,3 +43,15 @@ a:hover {
 a:active {
   color: lightblue;
 }
+
+.name {
+  text-align: center;
+  border-radius: 20%;
+  height: 18px;
+}
+
+.dog-form {
+  /* margin-left: 320px; */
+  background-color: bisque;
+  width: 185px;
+}

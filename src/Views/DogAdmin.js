@@ -13,7 +13,7 @@ export default function CreateDog() {
     try {
       alert('DOG HAS BEEN ADDED');
     } catch {
-      alert('DOG HAS BEEN ADDED');
+      alert('DOG WAS NOT ADDED');
     }
     e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
@@ -22,7 +22,7 @@ export default function CreateDog() {
 
   return (
     <div>
-      <h1>Add a new Dog</h1>
+      <h1>Add New Dog</h1>
       <DogForm
         name={name}
         setName={setName}

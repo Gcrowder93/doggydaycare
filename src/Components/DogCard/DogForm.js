@@ -22,7 +22,8 @@ export default function DogForm({
         <div className="form-control">
           <label>Name: </label>
           <input
-            placeholder="Name"
+            className="name"
+            placeholder="..."
             type="text"
             value={name}
             onChange={(e) => {
@@ -33,7 +34,8 @@ export default function DogForm({
         <div className="form-control">
           <label>Bio: </label>
           <textarea
-            placeholder="Bio"
+            className="name"
+            placeholder="..."
             type="text"
             value={bio}
             onChange={(e) => {
@@ -44,7 +46,8 @@ export default function DogForm({
         <div className="form-control">
           <label>Age: </label>
           <input
-            placeholder="Age"
+            className="name"
+            placeholder="    ..."
             type="number"
             value={age}
             onChange={(e) => {
@@ -55,7 +58,8 @@ export default function DogForm({
         <div className="form-control">
           <label>Breed: </label>
           <input
-            placeholder="Breed"
+            className="name"
+            placeholder="..."
             type="text"
             value={breed}
             onChange={(e) => {
@@ -66,13 +70,15 @@ export default function DogForm({
         <div className="form-control">
           <label>Image: </label>
           <input
-            placeholder="Url"
+            className="name"
+            placeholder="..."
             type="text"
             value={image}
             onChange={(e) => {
               setImage(e.target.value);
             }}
           />
+          <br></br>
           <br></br>
           <button onClick={handleSubmit}>Update</button>
         </div>

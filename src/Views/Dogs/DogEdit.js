@@ -33,7 +33,7 @@ export default function DogEdit() {
     try {
       alert('EDIT COMPLETE');
     } catch {
-      alert('EDIT COMPLETE');
+      alert('EDIT DID NOT WORK');
     }
     e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
@@ -45,7 +45,7 @@ export default function DogEdit() {
 
   return (
     <div>
-      <h1>Edit Dog</h1>
+      <h1>Edit Dog Information</h1>
       <DogForm
         name={name}
         setName={setName}

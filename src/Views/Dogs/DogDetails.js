@@ -24,7 +24,7 @@ export default function DogDetail() {
     try {
       alert('DOG DELETED');
     } catch {
-      alert('DOG DELETED');
+      alert('DOG WAS NOT DELETED');
     }
     e.preventDefault();
     await deleteDog(id);
