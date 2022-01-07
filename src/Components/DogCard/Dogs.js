@@ -10,7 +10,9 @@ export default function Dogs({ id, name, bio, image, age, breed /*handleDelete*/
         {age} year old. {breed}
       </h3>
       <h2> {bio} </h2>
-      <Link to={`/dogs/${id}/DogEdit`}>Edit</Link>
+      <Link key={Dogs.id} to={`/dogs/${id}/DogEdit`}>
+        Edit
+      </Link>
       <br></br>
       {/* <button onClick={handleDelete}>Delete</button> */}
     </div>
