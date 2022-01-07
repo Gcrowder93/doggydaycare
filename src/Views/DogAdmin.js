@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
-import DogForm from '../../Components/DogCard/DogForm';
 import { addDog } from '../services/DogRoute';
+import DogForm from '../Components/DogCard/DogForm';
 
 export default function CreateDog() {
   const [name, setName] = useState('');
@@ -10,10 +9,14 @@ export default function CreateDog() {
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
 
-  // const history = useHistory();
-
   const handleSubmit = async (e) => {
+    try {
+      alert('DOG HAS BEEN ADDED');
+    } catch {
+      alert('DOG HAS BEEN ADDED');
+    }
     e.preventDefault();
+    setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
     await addDog(name, bio, image, age, breed);
   };
 

@@ -14,7 +14,7 @@ export default function Dogs({ id, name, bio, image, age, breed /*handleDelete*/
         Edit
       </Link>
       <br></br>
-      {/* <button onClick={handleDelete}>Delete</button> */}
+      <br></br>
     </div>
   );
 }

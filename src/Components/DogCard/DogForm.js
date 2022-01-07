@@ -14,7 +14,6 @@ export default function DogForm({
   breed,
   setBreed,
   handleSubmit,
-  // handleDelete
 }) {
   return (
     <div className="dog-form">
@@ -76,7 +75,6 @@ export default function DogForm({
           />
           <br></br>
           <button onClick={handleSubmit}>Update</button>
-          {/* <button onClick={handleDelete}>Delete</button> */}
         </div>
       </form>
     </div>

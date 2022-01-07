@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import DogForm from '../../Components/DogCard/DogForm';
 import { updateDog } from '../../services/DogRoute';
@@ -10,6 +11,8 @@ export default function DogEdit() {
   const [image, setImage] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState('');
+  const [loading, setLoading] = useState(true);
+  const history = useHistory();
 
   const params = useParams();
 
@@ -21,14 +24,24 @@ export default function DogEdit() {
       setImage(resp.image);
       setAge(resp.age);
       setBreed(resp.breed);
+      setLoading(false);
     };
     fetchData();
   }, [params.id]);
 
   const handleSubmit = async (e) => {
+    try {
+      alert('EDIT COMPLETE');
+    } catch {
+      alert('EDIT COMPLETE');
+    }
     e.preventDefault();
+    setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
     await updateDog(params.id, name, bio, image, age, breed);
+    history.push('/');
   };
+
+  if (loading) return <h2> loading </h2>;
 
   return (
     <div>
@@ -47,7 +60,7 @@ export default function DogEdit() {
         handleSubmit={handleSubmit}
       />
       <br></br>
-      {/* <button onClick={handleSubmit}>Delete</button> */}
+      <button onClick={handleSubmit}>Delete</button>
     </div>
   );
 }
