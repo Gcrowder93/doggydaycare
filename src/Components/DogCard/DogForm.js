@@ -14,6 +14,7 @@ export default function DogForm(
   breed,
   setBreed,
   handleSubmit
+  // handleDelete
 ) {
   //this dog-form is being grabbed and no info is being put in
   return (
@@ -76,7 +77,7 @@ export default function DogForm(
           />
           <br></br>
           <button onClick={handleSubmit}>Update</button>
-          {/* <button onClick={handleSubmit}>Delete</button> */}
+          {/* <button onClick={handleDelete}>Delete</button> */}
         </div>
       </form>
     </div>

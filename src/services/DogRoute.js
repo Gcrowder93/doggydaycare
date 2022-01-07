@@ -25,3 +25,13 @@ export async function addDog(name, bio, image, age, breed) {
   const response = await client.from('dogs').insert({ name, bio, image, age, breed });
   return checkError(response);
 } //addDog and DogAdmin created
+
+// export async function deleteDog(id) {
+//   const resp = await client.from('dogs').delete({ id }).match('id', id);
+//   return checkError(resp);
+// }
+
+//add function for handleDelete in dogdetail.js and dog.js
+{
+  /* <button onClick={handleDelete}>Delete</button> */
+}
