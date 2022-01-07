@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Dogs from '../../Components/DogCard/Dogs';
+// import { useHistory } from 'react-router-dom';
 import { getDogsById /*deleteDog*/ } from '../../services/DogRoute';
 
 export default function DogDetail() {
@@ -17,18 +18,20 @@ export default function DogDetail() {
     fetchData();
   }, [id]);
 
-  if (loading) return <h2> loading </h2>;
+  // const history = useHistory();
+
   // const handleDelete = async (e) => {
   //   e.preventDefault();
   //   await deleteDog(id);
+  //   history.push('/');
   // };
+
+  if (loading) return <h2> loading </h2>;
 
   return (
     <>
       <ul>
-        <li style={{ listStyleType: 'none' }}>
-          <Dogs {...dogs} /*handleDelete={handleDelete}*/ />
-        </li>{' '}
+        <Dogs {...dogs} /*handleDelete={handleDelete}*/ />
       </ul>
     </>
   );

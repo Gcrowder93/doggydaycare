@@ -2,7 +2,7 @@ import React from 'react';
 // import { getDogsById } from '../../services/DogRoute';
 // import { updateDog } from '../../services/DogRoute';
 
-export default function DogForm(
+export default function DogForm({
   name,
   setName,
   bio,
@@ -13,10 +13,9 @@ export default function DogForm(
   setAge,
   breed,
   setBreed,
-  handleSubmit
+  handleSubmit,
   // handleDelete
-) {
-  //this dog-form is being grabbed and no info is being put in
+}) {
   return (
     <div className="dog-form">
       <form>

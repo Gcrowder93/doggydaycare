@@ -27,7 +27,7 @@ export async function addDog(name, bio, image, age, breed) {
 } //addDog and DogAdmin created
 
 // export async function deleteDog(id) {
-//   const resp = await client.from('dogs').delete({ id }).match('id', id);
+//   const resp = await client.from('dogs').delete({ id }).match('id' id);
 //   return checkError(resp);
 // }
 
