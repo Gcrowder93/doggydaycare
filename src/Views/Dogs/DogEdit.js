@@ -37,7 +37,6 @@ export default function DogEdit() {
     }
     e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
-
     history.push('/');
   };
 

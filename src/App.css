@@ -53,5 +53,7 @@ a:active {
 .dog-form {
   /* margin-left: 320px; */
   background-color: bisque;
+  border-radius: 20%;
+
   width: 185px;
 }
