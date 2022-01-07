@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Dogs from '../../Components/DogCard/Dogs';
-import { getDogsById } from '../../services/DogRoute';
-// import { deleteDog } from '../../services/DogRoute';
-// import { Link } from 'react-router-dom';
+import { getDogsById /*deleteDog*/ } from '../../services/DogRoute';
 
 export default function DogDetail() {
   const { id } = useParams();
   const [dogs, setDogs] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // const handleDelete with async and no default
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,13 +18,16 @@ export default function DogDetail() {
   }, [id]);
 
   if (loading) return <h2> loading </h2>;
+  // const handleDelete = async (e) => {
+  //   e.preventDefault();
+  //   await deleteDog(id);
+  // };
 
   return (
     <>
       <ul>
         <li style={{ listStyleType: 'none' }}>
-          <Dogs {...dogs} />
-          {/* <button onClick={handleDelete}>Delete</button> */}
+          <Dogs {...dogs} /*handleDelete={handleDelete}*/ />
         </li>{' '}
       </ul>
     </>
