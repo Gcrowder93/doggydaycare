@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Dogs from '../../Components/DogCard/Dogs';
-import { fetchDogs, getDogsById } from '../../services/DogRoute';
+import { useHistory } from 'react-router-dom';
+import { getDogsById, deleteDog } from '../../services/DogRoute';
 
 export default function DogDetail() {
   const { id } = useParams();
@@ -10,32 +11,33 @@ export default function DogDetail() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const dogData = await fetchDogs();
-      setDogs(dogData);
+      const dogData = await getDogsById(id);
+      setDogs(dogData.data);
+      setLoading(false);
     };
     fetchData();
   }, [id]);
 
-  useEffect(() => {
-    getDogsById(id)
-      .then(({ data }) => setDogs(data))
-      .finally(() => setLoading(false));
-  });
+  const history = useHistory();
+
+  const handleDelete = async (e) => {
+    try {
+      alert('DOG DELETED');
+    } catch {
+      alert('DOG WAS NOT DELETED');
+    }
+    e.preventDefault();
+    await deleteDog(id);
+    history.push('/');
+  };
+
   if (loading) return <h2> loading </h2>;
 
   return (
     <>
       <ul>
-        <li key={dogs.id} style={{ listStyleType: 'none' }}>
-          <Dogs dog={dogs} />
-          {dogs.map((dog) => (
-            <div key={dog.id}>
-              <h1> Say Hi to {dog.name}. </h1>
-              <img src={dog.image}></img>
-              <h2> {dog.bio}. </h2>
-            </div>
-          ))}
-        </li>
+        <Dogs {...dogs} handleDelete={handleDelete} />
+        <button onClick={handleDelete}>Delete</button>
       </ul>
     </>
   );
