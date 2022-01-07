@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import DogForm from '../../Components/DogCard/DogForm';
 import { updateDog } from '../../services/DogRoute';
 import { getDogsById } from '../../services/DogRoute';
@@ -31,13 +30,14 @@ export default function DogEdit() {
 
   const handleSubmit = async (e) => {
     try {
+      await updateDog(params.id, name, bio, image, age, breed);
       alert('EDIT COMPLETE');
     } catch {
       alert('EDIT DID NOT WORK');
     }
     e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
-    await updateDog(params.id, name, bio, image, age, breed);
+
     history.push('/');
   };
 

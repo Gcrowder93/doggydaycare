@@ -80,7 +80,7 @@ export default function DogForm({
           />
           <br></br>
           <br></br>
-          <button onClick={handleSubmit}>Update</button>
+          <button onClick={handleSubmit}>Add</button>
         </div>
       </form>
     </div>
