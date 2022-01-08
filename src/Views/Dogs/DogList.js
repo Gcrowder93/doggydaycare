@@ -27,7 +27,7 @@ export default function DogList() {
               <img src={dog.image}></img>
             </Link>
             <h2>
-              🐾 This is {dog.name} 🐾 <br></br> {dog.name} is a {dog.age} years old {dog.breed}.
+              🐾 This is {dog.name} 🐾 <br></br> {dog.name} is a {dog.age} year old {dog.breed}.
             </h2>
           </div>
         ))}

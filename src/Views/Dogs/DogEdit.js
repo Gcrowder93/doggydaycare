@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import DogForm from '../../Components/DogCard/DogForm';
-import { updateDog } from '../../services/DogRoute';
-import { getDogsById } from '../../services/DogRoute';
+import { updateDog, getDogsById } from '../../services/DogRoute';
 
 export default function DogEdit() {
   const [name, setName] = useState('');
@@ -29,13 +28,13 @@ export default function DogEdit() {
   }, [params.id]);
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       await updateDog(params.id, name, bio, image, age, breed);
       alert('EDIT COMPLETE');
     } catch {
       alert('EDIT DID NOT WORK');
     }
-    e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
     history.push('/');
   };
@@ -59,7 +58,6 @@ export default function DogEdit() {
         handleSubmit={handleSubmit}
       />
       <br></br>
-      <button onClick={handleSubmit}>Delete</button>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-export default function Dogs({ id, name, bio, image, age, breed /*handleDelete*/ }) {
+export default function Dogs({ id, name, bio, image, age, breed }) {
   return (
     <div className="dogs">
       <h2> {name} </h2>

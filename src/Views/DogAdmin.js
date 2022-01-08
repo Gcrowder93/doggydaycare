@@ -10,13 +10,13 @@ export default function CreateDog() {
   const [breed, setBreed] = useState('');
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       await addDog(name, bio, image, age, breed);
       alert('DOG HAS BEEN ADDED');
     } catch {
       alert('DOG WAS NOT ADDED');
     }
-    e.preventDefault();
     setAge(''), setName(''), setBio(''), setBreed(''), setImage('');
   };
 
