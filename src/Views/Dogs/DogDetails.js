@@ -12,7 +12,7 @@ export default function DogDetail() {
   useEffect(() => {
     const fetchData = async () => {
       const dogData = await getDogsById(id);
-      setDogs(dogData.data);
+      setDogs(dogData);
       setLoading(false);
     };
     fetchData();
@@ -22,12 +22,12 @@ export default function DogDetail() {
 
   const handleDelete = async (e) => {
     try {
+      await deleteDog(id);
       alert('DOG DELETED');
     } catch {
       alert('DOG WAS NOT DELETED');
     }
     e.preventDefault();
-    await deleteDog(id);
     history.push('/');
   };
 
